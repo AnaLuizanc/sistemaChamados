@@ -1,6 +1,9 @@
-package com.analuizanc.atendimento.ticket;
+package com.analuizanc.atendimento.services;
 
-import com.analuizanc.atendimento.ticket.dto.CreateTicketRequestDto;
+import com.analuizanc.atendimento.repositories.TicketRepository;
+import com.analuizanc.atendimento.entities.Ticket;
+import com.analuizanc.atendimento.entities.enums.TicketStatus;
+import com.analuizanc.atendimento.entities.dtos.CreateTicketRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

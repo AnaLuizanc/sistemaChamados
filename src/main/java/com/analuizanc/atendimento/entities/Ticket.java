@@ -1,5 +1,8 @@
-package com.analuizanc.atendimento.ticket;
+package com.analuizanc.atendimento.entities;
 
+import com.analuizanc.atendimento.entities.enums.TicketCategory;
+import com.analuizanc.atendimento.entities.enums.TicketPriority;
+import com.analuizanc.atendimento.entities.enums.TicketStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

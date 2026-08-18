@@ -1,4 +1,4 @@
-package com.analuizanc.atendimento.ticket;
+package com.analuizanc.atendimento.entities.enums;
 
 public enum TicketCategory {
     TECHNICAL_SUPPORT,

@@ -1,7 +1,7 @@
-package com.analuizanc.atendimento.ticket.dto;
+package com.analuizanc.atendimento.entities.dtos;
 
-import com.analuizanc.atendimento.ticket.TicketCategory;
-import com.analuizanc.atendimento.ticket.TicketPriority;
+import com.analuizanc.atendimento.entities.enums.TicketCategory;
+import com.analuizanc.atendimento.entities.enums.TicketPriority;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;

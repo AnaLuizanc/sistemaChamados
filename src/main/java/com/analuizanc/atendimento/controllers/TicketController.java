@@ -1,6 +1,8 @@
-package com.analuizanc.atendimento.ticket;
+package com.analuizanc.atendimento.controllers;
 
-import com.analuizanc.atendimento.ticket.dto.CreateTicketRequestDto;
+import com.analuizanc.atendimento.services.TicketService;
+import com.analuizanc.atendimento.entities.Ticket;
+import com.analuizanc.atendimento.entities.dtos.CreateTicketRequestDto;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
