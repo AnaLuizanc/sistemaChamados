@@ -42,4 +42,11 @@ public class Ticket {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
+    @ManyToOne
+    @JoinColumn(name = "created_by_id", nullable = false)
+    private User createdBy;
+
+    @ManyToOne
+    @JoinColumn(name = "assigned_to_id")
+    private User assignedTo;
 }
