@@ -12,17 +12,27 @@ import java.util.UUID;
 @Setter
 @Getter
 @Entity
+@Table(name = "users")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    @Column(nullable = false)
     private String name;
 
+    @Column(
+            unique = true,
+            nullable = false
+    )
     private String email;
 
+    @Column(nullable = false)
+    private String password;
+
     @Enumerated(EnumType.STRING)
-    private UserRole userRole;
+    @Column(nullable = false)
+    private UserRole role;
 
 }
