@@ -2,6 +2,7 @@ package com.analuizanc.atendimento.services;
 
 import com.analuizanc.atendimento.entities.User;
 import com.analuizanc.atendimento.entities.dtos.UserRequestDto;
+import com.analuizanc.atendimento.entities.dtos.UserResponseDto;
 import com.analuizanc.atendimento.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -13,13 +14,14 @@ import java.util.List;
 @Service
 public class UserService {
     private final UserRepository userRepository;
+
     private final PasswordEncoder passwordEncoder;
 
     public List<User> findAll() {
         return userRepository.findAll();
     }
 
-    public User save(UserRequestDto data) {
+    public UserResponseDto save(UserRequestDto data) {
         User user = new User();
 
         user.setName(data.name());
@@ -30,6 +32,8 @@ public class UserService {
 
         user.setRole(data.role());
 
-        return userRepository.save(user);
+        User savedUser = userRepository.save(user);
+
+        return new UserResponseDto(savedUser.getId(), savedUser.getName(), savedUser.getEmail(), savedUser.getRole());
     }
 }
