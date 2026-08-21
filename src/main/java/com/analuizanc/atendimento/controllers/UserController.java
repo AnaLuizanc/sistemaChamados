@@ -1,11 +1,10 @@
 package com.analuizanc.atendimento.controllers;
 
 import com.analuizanc.atendimento.entities.User;
+import com.analuizanc.atendimento.entities.dtos.UserRequestDto;
 import com.analuizanc.atendimento.services.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -14,6 +13,11 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;
+
+    @PostMapping
+    public User createUser(@RequestBody UserRequestDto data) {
+        return userService.save(data);
+    }
 
     @GetMapping
     public List<User> findAll() {
